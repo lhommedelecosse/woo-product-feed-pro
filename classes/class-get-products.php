@@ -2697,7 +2697,7 @@ class WooSEA_Get_Products {
 			/**
 			 * Get Custom Attributes for Single, Bundled and Composite products
 			 */
-			if (($product->is_type('simple')) OR ($product->is_type('external')) OR ($product->is_type('bundle')) OR ($product->is_type('composite')) OR ($product_data['product_type'] == "variable") OR ($product_data['product_type'] == "auction")){
+			if (($product->is_type('simple')) OR ($product->is_type('external')) OR ($product->is_type('bundle')) OR ($product->is_type('yith_bundle')) OR ($product->is_type('composite')) OR ($product_data['product_type'] == "variable") OR ($product_data['product_type'] == "auction")){
 				$custom_attributes = $this->get_custom_attributes( $product_data['id'] );
 
 				if(!in_array("woosea optimized title", $custom_attributes)){
@@ -2783,7 +2783,7 @@ class WooSEA_Get_Products {
 			/**
 			 * Get Product Attributes for Single products 
 			 */
-			if (($product->is_type('simple')) OR ($product->is_type('external')) OR ($product->is_type('bundle')) OR ($product->is_type('composite') OR ($product->is_type('auction')))){
+			if (($product->is_type('simple')) OR ($product->is_type('external')) OR ($product->is_type('bundle')) OR ($product->is_type('yith_bundle')) OR ($product->is_type('composite') OR ($product->is_type('auction')))){
 				$single_attributes = $product->get_attributes();
 
 				foreach ($single_attributes as $attribute){
