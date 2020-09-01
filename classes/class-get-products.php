@@ -2388,7 +2388,8 @@ class WooSEA_Get_Products {
 			}
 
 			// Override price when bundled product
-			if(($product->get_type() == "bundle") OR ($product->get_type() == "composite")){
+			// if(($product->get_type() == "bundle") OR ($product->get_type() == "composite")){
+			if(($product->get_type() == "bundle") OR ($product->get_type() == "woosb") OR ($product->get_type() == "composite")){
 				$meta = get_post_meta($product_data['id']);
                         	$product_data['price'] = get_post_meta($product_data['id'], '_price', true);
                         	$product_data['regular_price'] = get_post_meta($product_data['id'], '_regular_price', true);
@@ -2697,7 +2698,9 @@ class WooSEA_Get_Products {
 			/**
 			 * Get Custom Attributes for Single, Bundled and Composite products
 			 */
-			if (($product->is_type('simple')) OR ($product->is_type('external')) OR ($product->is_type('bundle')) OR ($product->is_type('yith_bundle')) OR ($product->is_type('composite')) OR ($product_data['product_type'] == "variable") OR ($product_data['product_type'] == "auction")){
+			// if (($product->is_type('simple')) OR ($product->is_type('external')) OR ($product->is_type('bundle')) OR ($product->is_type('composite')) OR ($product_data['product_type'] == "variable") OR ($product_data['product_type'] == "auction")){
+			// if (($product->is_type('simple')) OR ($product->is_type('external')) OR ($product->is_type('bundle')) OR ($product->is_type('yith_bundle')) OR ($product->is_type('composite')) OR ($product_data['product_type'] == "variable") OR ($product_data['product_type'] == "auction")){
+			if (($product->is_type('simple')) OR ($product->is_type('external')) OR ($product->is_type('bundle')) OR ($product->is_type('woosb')) OR ($product->is_type('composite')) OR ($product_data['product_type'] == "variable") OR ($product_data['product_type'] == "auction")){
 				$custom_attributes = $this->get_custom_attributes( $product_data['id'] );
 
 				if(!in_array("woosea optimized title", $custom_attributes)){
