@@ -2786,7 +2786,9 @@ class WooSEA_Get_Products {
 			/**
 			 * Get Product Attributes for Single products 
 			 */
-			if (($product->is_type('simple')) OR ($product->is_type('external')) OR ($product->is_type('bundle')) OR ($product->is_type('yith_bundle')) OR ($product->is_type('composite') OR ($product->is_type('auction')))){
+			// if (($product->is_type('simple')) OR ($product->is_type('external')) OR ($product->is_type('bundle')) OR ($product->is_type('composite') OR ($product->is_type('auction')))){
+			// if (($product->is_type('simple')) OR ($product->is_type('external')) OR ($product->is_type('bundle')) OR ($product->is_type('yith_bundle')) OR ($product->is_type('composite') OR ($product->is_type('auction')))){
+			if (($product->is_type('simple')) OR ($product->is_type('external')) OR ($product->is_type('bundle')) OR ($product->is_type('woosb')) OR ($product->is_type('composite') OR ($product->is_type('auction')))){
 				$single_attributes = $product->get_attributes();
 
 				foreach ($single_attributes as $attribute){
